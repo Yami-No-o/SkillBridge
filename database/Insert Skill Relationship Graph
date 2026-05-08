@@ -1,0 +1,20 @@
+-- Get skill IDs first using a CTE approach
+WITH s AS (SELECT id, name FROM skills)
+INSERT INTO skill_graph (from_skill, to_skill, weight)
+SELECT a.id, b.id, w.weight
+FROM (VALUES
+  ('pipe_fitting',       'concealed_piping',   0.9),
+  ('concealed_piping',   'bathroom_tiling',    0.8),
+  ('bathroom_tiling',    'waterproofing',      0.7),
+  ('bathroom_tiling',    'tile_grouting',      0.6),
+  ('electrical_wiring',  'switchboard_repair', 0.9),
+  ('electrical_wiring',  'ceiling_fan_install',0.8),
+  ('wall_plastering',    'painting',           0.7),
+  ('painting',           'wood_polishing',     0.5),
+  ('door_repair',        'furniture_assembly', 0.6),
+  ('furniture_assembly', 'false_ceiling',      0.5),
+  ('welding',            'grille_fabrication', 0.9),
+  ('waterproofing',      'wall_plastering',    0.6)
+) AS w(from_name, to_name, weight)
+JOIN s a ON a.name = w.from_name
+JOIN s b ON b.name = w.to_name;
