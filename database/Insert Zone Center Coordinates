@@ -1,0 +1,7 @@
+INSERT INTO zones (name, lat_center, lng_center) VALUES
+  ('Anekal',                  12.7109, 77.6960),
+  ('Sarjapura',               12.8601, 77.7849),
+  ('Kanakapura',              12.5467, 77.4178),
+  ('Electronic City Fringe',  12.8399, 77.6770),
+  ('Whitefield Outskirts',    12.9698, 77.7500),
+  ('Attibele',                12.7776, 77.7659);
