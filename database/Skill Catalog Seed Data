@@ -1,0 +1,17 @@
+INSERT INTO skills (name, label, category) VALUES
+  ('pipe_fitting',       'Pipe Fitting',         'plumbing'),
+  ('concealed_piping',   'Concealed Piping',      'plumbing'),
+  ('bathroom_tiling',    'Bathroom Tiling',       'tiling'),
+  ('waterproofing',      'Waterproofing',         'tiling'),
+  ('tile_grouting',      'Tile Grouting',         'tiling'),
+  ('electrical_wiring',  'Electrical Wiring',     'electrical'),
+  ('switchboard_repair', 'Switchboard Repair',    'electrical'),
+  ('ceiling_fan_install','Ceiling Fan Install',   'electrical'),
+  ('wall_plastering',    'Wall Plastering',       'masonry'),
+  ('painting',           'Painting',              'painting'),
+  ('wood_polishing',     'Wood Polishing',        'carpentry'),
+  ('door_repair',        'Door Repair',           'carpentry'),
+  ('furniture_assembly', 'Furniture Assembly',    'carpentry'),
+  ('false_ceiling',      'False Ceiling',         'carpentry'),
+  ('welding',            'Welding',               'fabrication'),
+  ('grille_fabrication', 'Grille Fabrication',    'fabrication');
