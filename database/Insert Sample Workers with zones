@@ -1,0 +1,10 @@
+-- First insert 3 sample workers (without auth link for demo purposes)
+INSERT INTO workers (name, phone, zone_id, rate_hour, rate_day, availability, rating, is_verified)
+SELECT
+  w.name, w.phone, z.id, w.rate_hour, w.rate_day, w.availability::jsonb, w.rating, true
+FROM (VALUES
+  ('Raju Kumar',   '+919876543001', 'Anekal',     80,  600,  '{"mon":["08:00","18:00"],"tue":["08:00","18:00"],"wed":["08:00","18:00"]}', 4.50),
+  ('Suresh M',     '+919876543002', 'Sarjapura',  90,  700,  '{"mon":["09:00","17:00"],"thu":["09:00","17:00"],"fri":["09:00","17:00"]}', 4.20),
+  ('Venkat Rao',   '+919876543003', 'Kanakapura', 75,  550,  '{"tue":["08:00","18:00"],"wed":["08:00","18:00"],"sat":["08:00","14:00"]}', 4.70)
+) AS w(name, phone, zone_name, rate_hour, rate_day, availability, rating)
+JOIN zones z ON z.name = w.zone_name;
