@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-bg text-brand-text font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-sans tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 
+           bg-brand-accent text-white font-semibold text-sm 
+           px-5 py-2.5 rounded-xl 
+           transition-all duration-200 
+           hover:bg-brand-accentHover hover:shadow-hover hover:-translate-y-0.5 
+           focus:outline-none focus:ring-2 focus:ring-brand-accent focus:ring-offset-2 
+           active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 
+           border border-brand-accent text-brand-accent font-semibold text-sm 
+           px-5 py-2.5 rounded-xl bg-transparent 
+           transition-all duration-200 
+           hover:bg-brand-accent hover:text-white hover:-translate-y-0.5 
+           focus:outline-none focus:ring-2 focus:ring-brand-accent focus:ring-offset-2 
+           active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 
+           text-brand-text font-medium text-sm px-4 py-2 rounded-lg 
+           transition-colors duration-150 
+           hover:bg-brand-warmDark 
+           focus:outline-none;
+  }
+
+  .card {
+    @apply bg-brand-card rounded-2xl shadow-soft border border-brand-border p-6 
+           transition-all duration-200 
+           hover:shadow-card hover:-translate-y-0.5;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-brand-text tracking-tight;
+  }
+
+  .section-sub {
+    @apply text-brand-muted text-base md:text-lg leading-relaxed max-w-xl mx-auto;
+  }
+
+  .zone-pill {
+    @apply px-4 py-2 rounded-full bg-brand-warm border border-brand-border 
+           text-brand-text text-sm font-medium 
+           transition-all duration-200 
+           hover:bg-brand-accent hover:text-white hover:border-brand-accent hover:shadow-hover;
+  }
+}
+
+/* Step connector line */
+.step-line {
+  height: 2px;
+  background: linear-gradient(90deg, #4a7c59 0%, #e5e0d8 100%);
+}
+
+/* Hide scrollbar for horizontal category chips */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
